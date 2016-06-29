@@ -16,17 +16,17 @@ angular.module('angularPayments')
                     'cvc', 'name','addressLine1', 
                     'addressLine2', 'addressCity',
                     'addressState', 'addressZip',
-                    'addressCountry', 'validationType']
+                    'addressCountry', 'validationType'];
     
     var camelToSnake = function(str){
       return str.replace(/([A-Z])/g, function(m){
         return "_"+m.toLowerCase();
       });
-    }
+    };
 
     var ret = {};
 
-    for(i in possibleKeys){
+    for(var i in possibleKeys){
         if(data.hasOwnProperty(possibleKeys[i])){
             ret[camelToSnake(possibleKeys[i])] = angular.copy(data[possibleKeys[i]]);
         }
@@ -35,7 +35,7 @@ angular.module('angularPayments')
     ret['number'] = (ret['number'] || '').replace(/ /g,'');
 
     return ret;
-  }
+  };
 
   return {
     restrict: 'A',
@@ -53,9 +53,9 @@ angular.module('angularPayments')
         expYearUsed = scope.expYear ? true : false;
 
         if(!(expMonthUsed && expYearUsed)){
-          exp = Common.parseExpiry(scope.expiry)
-          scope.expMonth = exp.month
-          scope.expYear = exp.year
+          exp = Common.parseExpiry(scope.expiry);
+          scope.expMonth = exp.month;
+          scope.expYear = exp.year;
         }
 
         var button = form.find('button');
@@ -85,5 +85,5 @@ angular.module('angularPayments')
 
       });
     }
-  }
+  };
 }]);
