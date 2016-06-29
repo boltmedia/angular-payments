@@ -1,6 +1,6 @@
 # Angular Payments
 
-An Angular Module that provides directives for *formatting* and *validating* forms related to payments. Also, it ships with a directive that makes it easy to integrate with Stripe's wonderful stripe.js.
+An Angular Module that provides directives for *formatting* and *validating* forms related to payments. Also, it ships with a directive that makes it easy to integrate with [Stripe.js](https://stripe.com/docs/stripe.js). 
 
 ### Credits
 
